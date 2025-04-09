@@ -1,0 +1,432 @@
+/* START OF FILE style.css */
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #50007b; /* Purple */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 5px solid #30004a; /* Add a darker border for definition */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add subtle shadow */
+}
+
+header h1 {
+    margin: 0; /* Remove default margin from h1 */
+    font-size: 2.5em; /* Make the title significantly larger */
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Add subtle text shadow */
+    color: white; /* Explicitly set H1 color to white */
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+h1, h2, h3, h4 {
+    color: #50007b;
+}
+
+h2 {
+    border-bottom: 2px solid #d3a0ea;
+    padding-bottom: 5px;
+}
+
+article {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 3px solid #d3a0ea;
+}
+
+.diagram-container {
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    text-align: center; /* Center SVG */
+}
+
+.explanation {
+    font-style: italic;
+    color: #555;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #e9e9e9;
+    display: inline-block; /* Make background fit content */
+    border-radius: 4px;
+}
+
+/* --- Introduction Question Styles --- */
+#intro-question-container {
+    background-color: #f8f9fa; /* Light grey background for the question area */
+    border: 1px solid #e9ecef;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#intro-question-container p.question {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #333; /* Darker text for question */
+}
+
+.answer-options div {
+    margin-bottom: 10px; /* Space between options */
+}
+
+.answer-options label {
+    margin-left: 8px; /* Space between radio button and text */
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.answer-options input[type="radio"] {
+    cursor: pointer;
+    transform: scale(1.1); /* Slightly larger radio buttons */
+    margin-right: 3px; /* Adjust vertical alignment slightly if needed */
+    vertical-align: middle;
+}
+
+#check-intro-answer {
+    margin-top: 15px;
+    /* Uses existing button styles */
+}
+
+.feedback-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 4px;
+    border-left-width: 5px;
+    border-left-style: solid;
+}
+
+.feedback-box p {
+    margin: 0;
+    font-weight: bold;
+}
+.feedback-box span {
+    display: block;
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+/* Correct Answer Feedback */
+.feedback-box.correct-feedback {
+    background-color: #e9f7ef; /* Light green */
+    border-color: #28a745; /* Green border */
+    color: #155724; /* Dark green text */
+}
+
+/* Incorrect Answer Feedback */
+.feedback-box.incorrect-feedback {
+    background-color: #f8d7da; /* Light red */
+    border-color: #dc3545; /* Red border */
+    color: #721c24; /* Dark red text */
+}
+
+/* Style for inline keyword if needed */
+.keyword-inline {
+    color: #005bb5;
+    font-weight: bold;
+    /* Optional: add hover effect if desired */
+}
+
+/* --- Diagram Specific Styles --- */
+
+/* REMOVED old #prism-diagram styles */
+
+/* Continuous Spectrum (Fig 11.3) */
+.spectrum-bar {
+    height: 30px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+}
+.wavelength-markers {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    color: #555;
+}
+
+/* Energy Levels (Fig 11.4) */
+#hydrogen-levels-diagram .energy-level {
+    stroke: #333;
+    stroke-width: 1.5;
+    cursor: pointer; /* Indicate interactivity */
+    transition: stroke 0.2s ease;
+}
+#hydrogen-levels-diagram .energy-level:hover,
+#hydrogen-levels-diagram .energy-level.selected {
+    stroke: #ff0000; /* Highlight on hover/selection */
+    stroke-width: 2.5;
+}
+#hydrogen-levels-diagram .level-label {
+    font-family: monospace;
+    font-size: 11px;
+    fill: #444;
+}
+#hydrogen-levels-diagram .energy-value {
+    font-family: monospace;
+    font-size: 11px;
+    fill: #005bb5; /* Blue */
+    text-anchor: end; /* Align text to the right */
+    /* --- ADDED THIS LINE --- */
+    transform: translateX(3px); /* Nudge text 3px to the right */
+}
+#level-interaction {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+
+/* Line Spectra (Fig 11.5) */
+.spectrum-diagram {
+     border: 1px solid #ccc;
+}
+/* .spectrum-diagram .spectrum-bg { */
+    /* Styles applied by JavaScript */
+/* } */
+.spectrum-diagram .emission-line {
+    stroke-width: 3;
+     /* Color set by JS */
+}
+.spectrum-diagram .absorption-line {
+     stroke: black;
+     stroke-width: 3;
+}
+.spectrum-diagram .line-label {
+    font-size: 10px;
+    text-anchor: middle;
+    fill: #555;
+}
+
+
+/* --- Other Elements --- */
+
+.question-box {
+    background-color: #fff8e1; /* Light yellow */
+    border: 1px solid #ffecb3;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+.question-box p:first-child {
+    margin-top: 0;
+}
+
+.summary-box {
+     background-color: #e8f5e9; /* Light green */
+     border: 1px solid #c8e6c9;
+     padding: 15px;
+     margin: 15px 0;
+     border-radius: 5px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #50007b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 5px 5px 0;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #6a00a3;
+}
+
+code {
+    background-color: #eee;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+sup {
+    font-size: 0.7em;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* --- ADDED Styles for Interactive Prism --- */
+.interactive-prism-container {
+    position: relative; /* Needed for potential absolute positioning of controls */
+    touch-action: none; /* Prevent default touch actions like scrolling when dragging */
+    margin-bottom: 10px; /* Add some space below */
+}
+
+#interactive-prism-diagram .prism {
+    fill: lightblue;
+    stroke: #333;
+    stroke-width: 1;
+    cursor: grab; /* Indicate draggable */
+}
+#interactive-prism-diagram .prism:active {
+    cursor: grabbing;
+}
+
+#interactive-prism-diagram .light-path {
+    stroke-width: 1.5;
+    fill: none;
+    pointer-events: none; /* Light paths shouldn't interfere with dragging */
+}
+#interactive-prism-diagram .incident-light { stroke: #555; } /* Darker grey */
+/* Color strokes set in JS */
+/* #interactive-prism-diagram .refracted-red { stroke: red; } */
+/* #interactive-prism-diagram .refracted-violet { stroke: violet; } */
+
+#interactive-prism-diagram .surface-normal { /* For debugging */
+    stroke: lightgreen;
+    stroke-width: 0.5;
+    stroke-dasharray: 2, 2;
+    pointer-events: none;
+}
+
+.interactive-prism-container .controls {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Duplicated rule from above, ensure only one exists */
+/* #interactive-prism-diagram .light-path { */
+/*     stroke-width: 1.5; */ /* Adjust thickness as needed */
+/*     fill: none; */
+/*     pointer-events: none; */
+/* } */
+
+/* --- Stellar Simulation Styles --- */
+.stellar-simulation-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px;
+    background-color: #00001a; /* Dark blue/black background */
+    color: #eee; /* Light text */
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 500px; /* Ensure enough height */
+}
+
+.star-field-area {
+    flex: 1 1 400px; /* Flexible width, basis 400px */
+    min-width: 350px;
+    position: relative; /* For potential absolute positioning inside */
+    /* border: 1px dashed cyan; */ /* Debug */
+}
+
+#star-field-svg {
+    display: block; /* Remove extra space */
+    width: 100%;
+    height: auto;
+    max-height: 450px; /* Limit height */
+    background-color: #000; /* Black background for stars */
+    border-radius: 3px;
+}
+
+#star-field-svg .star {
+    cursor: pointer;
+    transition: r 0.2s ease, filter 0.2s ease; /* Smooth hover */
+    filter: drop-shadow(0 0 3px white); /* Add a glow */
+}
+#star-field-svg .star:hover {
+    r: 8; /* Slightly larger on hover */
+    filter: drop-shadow(0 0 6px yellow);
+}
+#star-field-svg .star.selected {
+    stroke: yellow;
+    stroke-width: 2px;
+    stroke-dasharray: 3, 3; /* Dashed outline for selected */
+    filter: drop-shadow(0 0 8px orange);
+}
+#star-field-svg .star-label {
+    fill: #ccc;
+    font-size: 10px;
+    text-anchor: middle;
+    pointer-events: none; /* Labels don't block clicks */
+}
+
+.selected-star-spectrum-display {
+    margin-top: 15px;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 3px;
+}
+.selected-star-spectrum-display label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+.spectrum-display-svg { /* Style for this and reference SVGs */
+    display: block;
+    border: 1px solid #444;
+}
+
+.reference-spectra-area {
+    flex: 1 1 320px; /* Flexible width, basis 320px */
+    min-width: 300px;
+    background-color: #111; /* Slightly lighter background */
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.reference-spectra-area h4 {
+    margin-top: 0;
+    color: #eee;
+    text-align: center;
+    border-bottom: 1px solid #444;
+    padding-bottom: 8px;
+}
+
+#reference-spectra-list {
+    max-height: 450px; /* Limit height and allow scroll if needed */
+    overflow-y: auto;
+}
+
+.reference-item {
+    margin-bottom: 10px;
+}
+
+.reference-item label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Shared styles for spectrum lines/backgrounds within SVGs */
+.spectrum-bg-gradient {
+    /* Fill set by JS gradient */
+}
+.abs-line {
+    stroke: black;
+    stroke-width: 1; /* Can be adjusted */
+}
+
+/* --- END OF FILE style.css --- */

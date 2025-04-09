@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 11: Quang Phổ Vạch Của Nguyên Tử</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tổ 4: Bài 11: Quang Phổ Vạch Của Nguyên Tử</h1>
+        <p>Chuyên đề 3 - Vật lí Lượng tử</p>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>Mở đầu</h2>
+            <div id="intro-question-container">
+                <p class="question"><strong>Câu hỏi:</strong> Tại sao bức xạ của mặt trời (ánh sáng trắng) lại tạo ra được bảy sắc <span class="keyword-inline">cầu vồng</span> sau cơn mưa?</p>
+                <div class="answer-options">
+                    <div>
+                        <input type="radio" id="q1-a1" name="rainbow-reason" value="correct">
+                        <label for="q1-a1">Do ánh sáng mặt trời bị khúc xạ và tán sắc khi đi qua các giọt nước mưa.</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="q1-a2" name="rainbow-reason" value="wrong_reflection">
+                        <label for="q1-a2">Chỉ do ánh sáng bị phản xạ nhiều lần bên trong giọt nước.</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="q1-a3" name="rainbow-reason" value="wrong_diffraction">
+                        <label for="q1-a3">Do ánh sáng bị nhiễu xạ khi đi vòng qua các giọt nước mưa.</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="q1-a4" name="rainbow-reason" value="wrong_air">
+                        <label for="q1-a4">Do các màu sắc cầu vồng vốn đã có sẵn trong không khí.</label>
+                    </div>
+                </div>
+                <button id="check-intro-answer">Kiểm tra</button>
+                <div id="intro-feedback" class="feedback-box" style="display: none;">
+                    <!-- Feedback will be inserted here by JS -->
+                </div>
+            </div>
+             <!-- Keep the hidden explanations div if you want keywords elsewhere -->
+             <div id="explanations" style="display: none;">
+                 <div id="info-cauvong"><strong>Cầu vồng:</strong> Hiện tượng quang học tự nhiên xảy ra khi ánh sáng mặt trời bị khúc xạ và phản xạ qua các giọt nước mưa, tạo thành một dải màu sắc trên bầu trời.</div>
+                 <!-- Add other explanations if needed -->
+             </div>
+        </section>
+
+        <section id="quang-pho">
+            <h2>I. Quang Phổ</h2>
+            <p>
+                Ánh sáng trắng gồm một tập hợp các bức xạ điện từ có bước sóng
+                từ khoảng 3,8.10<sup>-7</sup> m (ánh sáng tím) đến khoảng 7,6.10<sup>-7</sup> m (ánh sáng đỏ).
+                Mỗi bức xạ có một bước sóng xác định được gọi là bức xạ đơn sắc (ánh sáng đơn sắc).
+            </p>
+
+            <article id="prism-dispersion">
+                <!-- Updated section for interactive prism -->
+                <h3>Minh hoạ tán sắc qua lăng kính (Interactive - Hình 11.1)</h3>
+                <div class="diagram-container interactive-prism-container">
+                    <!-- Changed ID, width, height -->
+                    <svg id="interactive-prism-diagram" width="500" height="350"></svg>
+                    <div class="controls">
+                        <p>Drag the prism to move it.</p>
+                    </div>
+                    <!-- Keep explanation, maybe update text slightly -->
+                    <div id="prism-explanation" class="explanation">
+                        Click/Drag the prism. Light bends entering and leaving due to refraction. Different colors bend by different amounts (dispersion).
+                    </div>
+                </div>
+                <!-- End updated section -->
+                <p>Hình 11.1. Minh họa sự tán sắc ánh sáng trắng qua lăng kính thủy tinh</p>
+                <div class="question-box">
+                    <p><b>? Hãy quan sát Hình 11.1 và liệt kê các màu cơ bản trên màn chắn theo thứ tự từ trên xuống dưới.</b></p>
+                    <p><i>Trả lời: Đỏ, Cam, Vàng, Lục, Lam, Chàm, Tím.</i></p>
+                </div>
+            </article>
+
+            <article id="continuous-spectrum">
+                <h3>Quang phổ liên tục (Hình 11.3)</h3>
+                 <div class="diagram-container">
+                    <div id="continuous-spectrum-bar" class="spectrum-bar"></div>
+                    <div class="wavelength-markers">
+                        <span>380nm</span>
+                        <span>760nm</span>
+                    </div>
+                </div>
+                <p>Quang phổ liên tục do các chất khí có áp suất lớn, chất lỏng, rắn phát ra khi bị nung nóng</p>
+            </article>
+            <!-- Add Diffraction Grating section if needed -->
+
+        </section>
+
+        <section id="trang-thai-dung">
+            <h2>II. Trạng Thái Dừng Của Nguyên Tử</h2>
+            <p>
+                Các mô hình vật lí giải thích cho cấu trúc của nguyên tử và hạt nhân hiện nay được xây dựng
+                từ những ý tưởng ban đầu của Niels Henrik David Bohr (Nây Hen-rích Đa-vít Bo) về lượng tử
+                năng lượng và trạng thái dừng.
+            </p>
+
+            <article id="stationary-states">
+                <h3>1. Trạng thái dừng của nguyên tử</h3>
+                <p>
+                    Năng lượng của nguyên tử cũng chính là năng lượng của electron trong nguyên tử.
+                    Nguyên tử chỉ tồn tại trong một số trạng thái có năng lượng xác định gọi là <strong>trạng thái dừng</strong>.
+                    Ở trạng thái dừng, nguyên tử không phát xạ hay hấp thụ năng lượng.
+                </p>
+                <p>
+                    <strong>Trạng thái cơ bản</strong> là trạng thái dừng mà nguyên tử có năng lượng thấp nhất.
+                    <strong>Trạng thái kích thích</strong> là trạng thái dừng mà nguyên tử có năng lượng cao hơn.
+                    Thường thì nguyên tử tồn tại ở trạng thái kích thích trong thời gian rất ngắn (cỡ 10<sup>-8</sup> s)
+                    sau đó sẽ chuyển về trạng thái dừng có năng lượng thấp hơn và cuối cùng về trạng thái cơ bản.
+                </p>
+                <p>
+                    Mức năng lượng của nguyên tử là rất nhỏ nên người ta thường dùng đơn vị năng lượng là electron vôn (eV):
+                </p>
+                <p>1 eV = 1,6.10<sup>-19</sup> J.</p>
+                 <div class="diagram-container">
+                     <h4>Mức năng lượng Hydrogen (Hình 11.4)</h4>
+                     <svg id="hydrogen-levels-diagram" width="250" height="550"></svg>
+                     <div id="level-interaction">
+                         <p>Chọn 2 mức năng lượng để tính photon:</p>
+                         <span id="selected-levels">Mức 1: ?, Mức 2: ?</span><br>
+                         <span id="photon-result">Photon: ? eV, ? nm</span>
+                         <button id="reset-levels">Reset</button>
+                     </div>
+                 </div>
+                <div class="question-box">
+                     <p><b>? Hãy đổi giá trị các mức năng lượng của electron trong nguyên tử hydrogen trong Hình 11.4 sang đơn vị jun (J).</b></p>
+                     <button id="convert-ev-joule">Hiện đáp án</button>
+                     <p id="joule-answers" style="display:none;">K: -13.60 eV = -2.176e-18 J<br>L: -3.40 eV = -5.44e-19 J<br>...</p>
+                 </div>
+            </article>
+        </section>
+
+        <section id="quang-pho-vach">
+             <h2>III. Quang Phổ Vạch Của Nguyên Tử</h2>
+             <!-- Add Planetary Model section if needed -->
+
+             <article id="absorption-emission-mechanism">
+                 <h3>2. Cơ chế hấp thụ và phát xạ năng lượng</h3>
+                 <p>
+                    Nguyên tử chỉ hấp thụ hay phát xạ năng lượng dưới dạng bức xạ điện từ khi nó chuyển từ
+                    trạng thái dừng này sang trạng thái dừng khác.
+                 </p>
+                 <p>
+                     Nguyên tử chuyển từ trạng thái dừng có năng lượng E<sub>n</sub> sang trạng thái dừng có năng lượng
+                     E<sub>m</sub> thấp hơn thì nguyên tử phát xạ một photon có năng lượng đúng bằng hiệu E<sub>n</sub> – E<sub>m</sub>:
+                 </p>
+                 <p style="text-align: center; font-weight: bold;">
+                     E<sub>n</sub> - E<sub>m</sub> = hf    (11.1)
+                 </p>
+                 <p>
+                    Ngược lại nếu nguyên tử đang ở trạng thái dừng có năng lượng E<sub>m</sub> mà hấp thụ một photon có năng
+                    lượng hf đúng bằng hiệu E<sub>n</sub> - E<sub>m</sub> thì nó chuyển sang trạng thái dừng có năng lượng E<sub>n</sub> cao hơn.
+                 </p>
+                  <div class="question-box">
+                     <p><b>? Dựa vào Hình 11.4 hãy xác định bước sóng dài nhất của các photon có thể bị hấp thụ bởi một nguyên tử hydrogen đang ở trạng thái cơ bản.</b></p>
+                     <p><i>Trả lời: Bước sóng dài nhất ứng với năng lượng nhỏ nhất, tức là chuyển từ K (n=1, -13.6eV) lên L (n=2, -3.4eV). ΔE = 10.2 eV. λ = hc/ΔE ≈ 121.5 nm (UV).</i></p>
+                 </div>
+             </article>
+
+             <article id="emission-spectrum">
+                 <h3>1. Quang phổ vạch phát xạ</h3>
+                 <p>
+                    Quang phổ vạch phát xạ là quang phổ gồm một hệ thống những vạch màu riêng rẽ được
+                    ngăn cách với nhau bởi những khoảng tối (Hình 11.5a).
+                 </p>
+                  <p>
+                     Quang phổ vạch phát xạ do chất khí có áp suất thấp khi ở trạng thái kích thích phát ra. Quang
+                     phổ vạch phát xạ của các nguyên tố khác nhau sẽ khác nhau về số lượng các vạch, về vị trí các
+                     vạch (hay về bước sóng) và độ sáng của vạch này so với vạch kia trong cùng một quang phổ.
+                 </p>
+                 <div class="diagram-container">
+                     <h4>Quang phổ phát xạ Hydrogen (Hình 11.5a)</h4>
+                     <svg id="emission-spectrum-diagram" class="spectrum-diagram" width="400" height="50"></svg>
+                 </div>
+                 <!-- Add activity based on emission mechanism -->
+                 <div class="question-box">
+                    <p><b>? Dựa vào cơ chế bức xạ năng lượng của nguyên tử (Mục II.2), hãy giải thích sự tạo thành quang phổ vạch phát xạ.</b></p>
+                    <p><i>Giải thích: Khi nguyên tử (ví dụ trong chất khí loãng bị kích thích) chuyển từ trạng thái dừng có năng lượng cao E<sub>n</sub> xuống trạng thái dừng có năng lượng thấp hơn E<sub>m</sub>, nó phát ra một photon có năng lượng hf = E<sub>n</sub> - E<sub>m</sub>. Vì nguyên tử chỉ có một số hữu hạn các mức năng lượng E<sub>n</sub>, E<sub>m</sub>,... nên nó chỉ có thể phát ra các photon có một số tần số (và bước sóng λ=c/f) xác định. Mỗi tần số/bước sóng này ứng với một vạch màu (hoặc vạch không nhìn thấy) trong quang phổ phát xạ.</i></p>
+                 </div>
+             </article>
+
+             <article id="absorption-spectrum">
+                 <h3>2. Quang phổ vạch hấp thụ</h3>
+                 <p>
+                    Chiếu một chùm ánh sáng trắng (có đủ mọi tần số/bước sóng) phát ra từ bóng đèn sợi đốt qua một bình thuỷ tinh chứa
+                    chất khí hoặc hơi kim loại (ở trạng thái cơ bản, không bị kích thích) đến máy phân tích quang phổ, ta sẽ thu được quang phổ vạch hấp thụ.
+                  </p>
+                 <p> <!-- Added from page 62 -->
+                    Quang phổ vạch hấp thụ gồm các vạch tối trên nền quang phổ liên tục của ánh sáng trắng.
+                    Các chất khí hoặc hơi kim loại đều có thể cho quang phổ vạch hấp thụ.
+                 </p>
+                 <div class="diagram-container">
+                     <h4>Quang phổ hấp thụ Hydrogen (Hình 11.5b)</h4>
+                      <svg id="absorption-spectrum-diagram" class="spectrum-diagram" width="400" height="50"></svg>
+                 </div>
+             </article>
+
+             <article id="comparison-activity">
+                <h3>So sánh Quang phổ Phát xạ và Hấp thụ (Hình 11.5)</h3>
+                <p> <!-- Added from page 62 -->
+                    Khi so sánh quang phổ vạch phát xạ và quang phổ vạch hấp thụ của cùng một nguyên tử có
+                    sự trùng khớp về vị trí các vạch tương ứng của chúng.
+                </p>
+                <!-- Interactive Question Box based on page 62 questions -->
+                <div class="question-box">
+                    <ol>
+                        <li>Hãy so sánh quang phổ vạch phát xạ và quang phổ vạch hấp thụ của nguyên tử hydrogen thu được trong Hình 11.5.</li>
+                        <li>Giải thích tại sao có sự trùng khớp của vị trí các vạch trong Hình 11.5a và 11.5b.</li>
+                        <li>Chứng tỏ rằng, một nguyên tử có thể hấp thụ những photon tương ứng với ánh sáng đơn sắc có bước sóng nào thì khi bức xạ nó cũng có thể phát ra những photon có bước sóng như vậy.</li>
+                    </ol>
+                    <button class="toggle-answer-btn" data-target="comparison-answer">Hiện giải thích</button>
+                    <div id="comparison-answer" style="display: none;">
+                       <p><i>1. So sánh: Vị trí các vạch màu sáng trên nền tối của quang phổ phát xạ (H.11.5a) trùng khớp hoàn toàn với vị trí các vạch tối trên nền quang phổ liên tục của quang phổ hấp thụ (H.11.5b) đối với cùng một nguyên tố (Hydrogen).</i></p>
+                       <p><i>2. & 3. Giải thích sự trùng khớp: Nguyên tử chỉ hấp thụ photon có năng lượng hf đúng bằng hiệu E<sub>cao</sub> - E<sub>thấp</sub> để chuyển từ mức E<sub>thấp</sub> lên E<sub>cao</sub>. Khi bị kích thích, nó cũng chỉ phát xạ photon có năng lượng hf' đúng bằng hiệu E<sub>cao</sub> - E<sub>thấp</sub> khi chuyển từ E<sub>cao</sub> xuống E<sub>thấp</sub>. Vì hiệu năng lượng giữa hai trạng thái dừng là như nhau cho cả quá trình hấp thụ và phát xạ, nên các tần số (và bước sóng) của ánh sáng bị hấp thụ cũng chính là các tần số (và bước sóng) mà nguyên tử đó có thể phát xạ. Do đó, vạch tối hấp thụ xuất hiện đúng tại vị trí vạch sáng phát xạ.</i></p>
+                   </div>
+                </div>
+            </article>
+            <!-- Add Solar Spectrum and Helium sections if needed -->
+
+        </section>
+
+        <section id="ung-dung">
+            <!-- Changed title to reflect the simulation -->
+            <h2>IV. Phân tích Quang phổ Sao (Simulation)</h2>
+            <p>Click vào một ngôi sao để xem quang phổ hấp thụ của nó. So sánh với quang phổ tham chiếu của các nguyên tố để xác định thành phần của ngôi sao.</p>
+
+            <div class="stellar-simulation-container">
+
+                <!-- Left Side: Star Field -->
+                <div class="star-field-area">
+                    <svg id="star-field-svg" width="400" height="450">
+                        <!-- Stars will be added here by JS -->
+                        <defs>
+                             <!-- Define gradients or filters if needed -->
+                        </defs>
+                    </svg>
+                     <!-- Display area for the selected star's combined spectrum -->
+                     <div class="selected-star-spectrum-display">
+                         <label>Quang phổ sao đang chọn:</label>
+                         <svg id="selected-star-spectrum-svg" class="spectrum-display-svg" width="380" height="40"></svg>
+                     </div>
+                </div>
+
+                <!-- Right Side: Reference Spectra -->
+                <div class="reference-spectra-area">
+                    <h4>Quang phổ Tham chiếu (Hấp thụ)</h4>
+                    <div id="reference-spectra-list">
+                        <!-- Reference spectra will be added here by JS -->
+                        <!-- Example structure: -->
+                        <!--
+                        <div class="reference-item">
+                            <label>Hydrogen</label>
+                            <svg class="reference-spectrum-svg" width="300" height="30"></svg>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="summary">
+            <h2>Tổng kết</h2>
+            <div class="summary-box">
+                <h3>Chúng ta đã tìm hiểu</h3>
+                <ul>
+                    <li>Sự phân tách ánh sáng trắng thành các thành phần đơn sắc được gọi là tán sắc ánh sáng.</li>
+                    <li>Nguyên tử chỉ tồn tại trong một số trạng thái có năng lượng xác định gọi là trạng thái dừng. Khi ở trạng thái dừng thì nguyên tử không bức xạ hay hấp thụ năng lượng.</li>
+                    <li>Nguyên tử chỉ hấp thụ hay bức xạ năng lượng dưới dạng bức xạ điện từ khi nó chuyển từ trạng thái dừng này sang trạng thái dừng khác.</li>
+                    <li>Quang phổ vạch phát xạ là quang phổ gồm một hệ thống những vạch màu riêng rẽ được ngăn cách với nhau bởi những khoảng tối. Quang phổ vạch phát xạ do chất khí có áp suất thấp khi ở trạng thái kích thích phát ra.</li>
+                    <li>Quang phổ vạch hấp thụ gồm các vạch tối trên nền quang phổ liên tục của ánh sáng trắng. Chất khí hoặc hơi kim loại đều có thể cho quang phổ vạch hấp thụ.</li>
+                    <li>Một nguyên tử có thể hấp thụ những photon tương ứng với ánh sáng đơn sắc có bước sóng nào thì khi bức xạ nó cũng có thể phát ra những photon có bước sóng như vậy.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Interactive Physics Course - Done by Trung</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+/* landing_style.css */
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(220, 180, 255, 0.4), 0 0 20px rgba(160, 80, 255, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(220, 180, 255, 0.7), 0 0 40px rgba(160, 80, 255, 0.5);
+        transform: scale(1.03);
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0; /* Light grey text for contrast */
+    /* Starry background using gradients */
+    background-color: #0a0514; /* Very dark base */
+    background-image:
+        /* Small faint stars */
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.4) 0.5px, transparent 1.5px),
+        radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.5) 1px, transparent 2px),
+        radial-gradient(circle at 50% 70%, rgba(220, 220, 255, 0.4) 0.5px, transparent 1.5px),
+        radial-gradient(circle at 90% 60%, rgba(255, 255, 255, 0.3) 0.5px, transparent 2px),
+        radial-gradient(circle at 10% 85%, rgba(255, 255, 255, 0.4) 1px, transparent 2.5px),
+        /* Slightly larger/brighter stars */
+        radial-gradient(circle at 40% 50%, rgba(255, 255, 220, 0.7) 1px, transparent 3px),
+        radial-gradient(circle at 70% 80%, rgba(255, 220, 220, 0.6) 1.5px, transparent 3.5px),
+        radial-gradient(circle at 30% 15%, rgba(220, 220, 255, 0.8) 1.5px, transparent 3px);
+    background-size: 100px 100px; /* Adjust size to control star density */
+    background-position: 0 0, 10px 30px, 20px 60px, 30px 90px, 40px 10px, 50px 40px, 60px 70px, 70px 20px; /* Vary positions */
+    min-height: 100vh; /* Ensure background covers full height */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-container {
+    text-align: center;
+    background-color: rgba(10, 5, 20, 0.7); /* Semi-transparent dark overlay */
+    padding: 40px 50px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 20px; /* Add some margin */
+    box-shadow: 0 0 30px rgba(128, 0, 255, 0.3); /* Subtle purple glow */
+}
+
+.landing-header h1 {
+    font-size: 3em; /* Big title */
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* White glow */
+}
+
+.landing-header .subtitle {
+    font-size: 1.3em;
+    color: #c0c0ff; /* Light purple/blue */
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.team-intro h2 {
+    color: #e5d0ff; /* Lighter purple */
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    border-bottom: 1px solid rgba(229, 208, 255, 0.3);
+    padding-bottom: 10px;
+    display: inline-block; /* Keep border contained */
+}
+
+.team-intro ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.team-intro li {
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+.cta-section {
+    margin-top: 30px;
+}
+
+.start-button {
+    display: inline-block;
+    padding: 18px 40px;
+    background: linear-gradient(145deg, #6a00a3, #8a2be2); /* Purple gradient */
+    color: white;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px; /* Rounded pill shape */
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    /* Apply the animation */
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.start-button:hover {
+    background: linear-gradient(145deg, #8a2be2, #9a4be2); /* Lighter gradient on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+    box-shadow: 0 0 25px rgba(220, 180, 255, 0.8), 0 0 50px rgba(160, 80, 255, 0.6); /* Stronger glow on hover */
+    animation-play-state: paused; /* Pause pulsing on hover for interaction */
+}
